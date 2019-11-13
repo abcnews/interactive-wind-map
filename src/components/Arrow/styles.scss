@@ -1,0 +1,145 @@
+.root {
+  position: absolute;
+}
+
+.angle {
+}
+
+[data-dir='N'] .angle {
+  transform: rotate(0deg);
+}
+[data-dir='NNE'] .angle {
+  transform: rotate(22.5deg);
+}
+[data-dir='NE'] .angle {
+  transform: rotate(45deg);
+}
+[data-dir='ENE'] .angle {
+  transform: rotate(67.5deg);
+}
+[data-dir='E'] .angle {
+  transform: rotate(90deg);
+}
+[data-dir='ESE'] .angle {
+  transform: rotate(112.5deg);
+}
+[data-dir='SE'] .angle {
+  transform: rotate(135deg);
+}
+[data-dir='SSE'] .angle {
+  transform: rotate(157.5deg);
+}
+[data-dir='S'] .angle {
+  transform: rotate(180deg);
+}
+[data-dir='SSW'] .angle {
+  transform: rotate(202.5deg);
+}
+[data-dir='SW'] .angle {
+  transform: rotate(225deg);
+}
+[data-dir='WSW'] .angle {
+  transform: rotate(247.5deg);
+}
+[data-dir='W'] .angle {
+  transform: rotate(270deg);
+}
+[data-dir='WNW'] .angle {
+  transform: rotate(292.5deg);
+}
+[data-dir='NW'] .angle {
+  transform: rotate(315deg);
+}
+[data-dir='NNW'] .angle {
+  transform: rotate(337.5deg);
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translate(0, -150%);
+  }
+  10% {
+    opacity: 0;
+  }
+  30%,
+  70% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 150%);
+  }
+}
+
+.graphic {
+  position: absolute;
+  animation: move 3s linear infinite;
+
+  & + .graphic {
+    animation-delay: -1.5s;
+  }
+}
+
+[data-anim-speed='slowest'] .graphic {
+  animation-duration: 4.5s;
+
+  & + .graphic {
+    animation-delay: -2.25s;
+  }
+}
+[data-anim-speed='slower'] .graphic {
+  animation-duration: 4s;
+
+  & + .graphic {
+    animation-delay: -2s;
+  }
+}
+[data-anim-speed='slow'] .graphic {
+  animation-duration: 3.5s;
+
+  & + .graphic {
+    animation-delay: -1.75s;
+  }
+}
+[data-anim-speed='standard'] .graphic {
+  animation-duration: 3s;
+
+  & + .graphic {
+    animation-delay: -1.5s;
+  }
+}
+[data-anim-speed='fast'] .graphic {
+  animation-duration: 2.5s;
+
+  & + .graphic {
+    animation-delay: -1.25s;
+  }
+}
+[data-anim-speed='faster'] .graphic {
+  animation-duration: 2s;
+
+  & + .graphic {
+    animation-delay: -1s;
+  }
+}
+[data-anim-speed='fastest'] .graphic {
+  animation-duration: 1.5s;
+
+  & + .graphic {
+    animation-delay: -0.75s;
+  }
+}
+
+.root.static {
+  .graphic {
+    animation: none;
+
+    & + .graphic {
+      display: none;
+    }
+  }
+}

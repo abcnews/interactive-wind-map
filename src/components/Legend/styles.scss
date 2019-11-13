@@ -1,0 +1,45 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 1rem 0.75rem;
+  width: 100%;
+  background-color: rgba(236, 236, 236, 0.75);
+}
+
+.inner {
+  width: 100%;
+  max-width: 16.5rem;
+  color: #757575;
+  font-family: ABCSans, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: bold;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+
+  @media (min-width: 61.25rem) {
+    max-width: 24rem;
+    font-size: 0.75rem;
+  }
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gradient {
+  margin: 0.125rem 0;
+  height: 0.75rem;
+  background-image: url(./scale-gradient.png);
+  background-size: 100%;
+}
+
+.extents {
+  display: flex;
+  justify-content: space-between;
+}
