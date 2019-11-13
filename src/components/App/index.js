@@ -18,25 +18,31 @@ const INITIALLY_SMALL_VIEWPORT = INITIAL_WINDOW_WIDTH < 960;
 
 const STATES = {
   nsw: {
-    map: {
-      center: [INITIALLY_SMALL_VIEWPORT ? 150 : 147.6, -32.5],
-      // center: [150, -32.5],
-      // maxBounds: [
-      //   [140.87502165784787, -37.79552214449357],
-      //   [153.93131906230678, -26.789200285262886]
-      // ],
-      zoom: INITIALLY_SMALL_VIEWPORT ? 5 : 5.75
+    'map-sm': {
+      center: [150, -32.5],
+      zoom: 5
+    },
+    'map-md': {
+      center: [147.6, -32.5],
+      zoom: 5.5
+    },
+    'map-lg': {
+      center: [147.6, -32.5],
+      zoom: 5.75
     }
   },
   qld: {
-    map: {
-      center: [INITIALLY_SMALL_VIEWPORT ? 148 : 150, INITIALLY_SMALL_VIEWPORT ? -21 : -23],
-      // center: [156, -25],
-      // maxBounds: [
-      //   [134.42718304764168, -29.391821066000865],
-      //   [156.6546786332101, -8.513788739900605]
-      // ],
-      zoom: INITIALLY_SMALL_VIEWPORT ? 4.25 : 5.75
+    'map-sm': {
+      center: [148, -21],
+      zoom: 4.25
+    },
+    'map-md': {
+      center: [148, -22],
+      zoom: 5.25
+    },
+    'map-lg': {
+      center: [150, -23],
+      zoom: 5.75
     }
   }
 };
@@ -66,6 +72,10 @@ export default function App({ state }) {
         return setTimeout(initMapIfMounted, 100);
       }
 
+      const containerWidth = rootEl.getBoundingClientRect().width;
+      const size = containerWidth < 640 ? 'sm' : containerWidth < 952 ? 'md' : 'lg';
+      const mapConfig = stateData[`map-${size}`] || stateData.map;
+
       const map = new mapboxgl.Map(
         Object.assign(
           {
@@ -78,7 +88,7 @@ export default function App({ state }) {
             // scrollZoom: false,
             style: MAPBOX_STYLE
           },
-          stateData.map
+          mapConfig
         )
       );
 

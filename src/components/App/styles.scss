@@ -6,7 +6,7 @@
   padding-bottom: 133.33%; // Aspect ratio 3:4
   // padding-bottom: 177.78%; // Aspect ratio 9:16
 
-  @media (min-width: 61.25rem) {
+  @media (min-width: 641px) {
     padding-bottom: 100%; // Aspect ratio 1:1
   }
 }
