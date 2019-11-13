@@ -13,23 +13,30 @@ let nextId = 0;
 
 mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
 
+const INITIAL_WINDOW_WIDTH = window.innerWidth;
+const INITIALLY_SMALL_VIEWPORT = INITIAL_WINDOW_WIDTH < 960;
+
 const STATES = {
   nsw: {
     map: {
-      center: [153.93131906230678, -32.46018567916396],
-      maxBounds: [
-        [140.87502165784787, -37.79552214449357],
-        [153.93131906230678, -26.789200285262886]
-      ]
+      center: [INITIALLY_SMALL_VIEWPORT ? 150 : 147.6, -32.5],
+      // center: [150, -32.5],
+      // maxBounds: [
+      //   [140.87502165784787, -37.79552214449357],
+      //   [153.93131906230678, -26.789200285262886]
+      // ],
+      zoom: INITIALLY_SMALL_VIEWPORT ? 5 : 5.75
     }
   },
   qld: {
     map: {
-      center: [145.54093084042734, -19.28428376444579],
-      maxBounds: [
-        [134.42718304764168, -29.391821066000865],
-        [156.6546786332101, -8.513788739900605]
-      ]
+      center: [INITIALLY_SMALL_VIEWPORT ? 148 : 150, INITIALLY_SMALL_VIEWPORT ? -21 : -23],
+      // center: [156, -25],
+      // maxBounds: [
+      //   [134.42718304764168, -29.391821066000865],
+      //   [156.6546786332101, -8.513788739900605]
+      // ],
+      zoom: INITIALLY_SMALL_VIEWPORT ? 4.25 : 5.75
     }
   }
 };
@@ -63,15 +70,20 @@ export default function App({ state }) {
         Object.assign(
           {
             container: mapboxMapId,
-            // interactive: false,
+            // doubleClickZoom: false,
+            // dragRotate: false,
+            interactive: false,
             maxZoom: 7,
-            style: MAPBOX_STYLE,
-            zoom: 5
+            minZoom: 3,
+            // scrollZoom: false,
+            style: MAPBOX_STYLE
           },
           stateData.map
         )
       );
 
+      map.scrollZoom.disable();
+      map.doubleClickZoom.disable();
       map.on('load', () => resolve(map));
       window.__map = map;
 
