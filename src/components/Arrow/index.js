@@ -38,7 +38,7 @@ export default function Arrow({ speed, dir } = {}) {
   const graphicHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="${styles.graphic}" width="${HEAD_WIDTH}" height="${height}">
   <path fill="${color}" fill-rule="evenodd" d="${path}"/>
 </svg>`;
-  rootEl.className = `${styles.root} ${styles.static}`;
+  rootEl.className = `${styles.root}`;
   rootEl.setAttribute('data-dir', dir);
   rootEl.setAttribute('data-anim-speed', animSpeed);
   rootEl.innerHTML = `<div class="${styles.angle}">${graphicHTML}${graphicHTML}</div>`;
