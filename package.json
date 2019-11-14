@@ -18,7 +18,7 @@
 		"@abcnews/aunty": "^10.5.2"
 	},
 	"dependencies": {
-		"d3-scale": "^3.2.0",
+		"d3-scale": "^1.0.7",
 		"mapbox-gl": "^1.5.0"
 	}
 }
