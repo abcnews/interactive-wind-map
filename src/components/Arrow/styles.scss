@@ -76,10 +76,10 @@
 
 .graphic {
   position: absolute;
-  animation: move 3s linear infinite;
+  animation: move 4s linear infinite;
 
   & + .graphic {
-    animation-delay: -1.5s;
+    animation-delay: -2s;
   }
 }
 

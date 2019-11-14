@@ -42,7 +42,7 @@ export default function Arrow({ speed, dir } = {}) {
 </svg>`;
   rootEl.className = `${styles.root}`;
   rootEl.setAttribute('data-dir', dir);
-  rootEl.setAttribute('data-anim-speed', animSpeed);
+  // rootEl.setAttribute('data-anim-speed', animSpeed);
   rootEl.innerHTML = `<div class="${styles.angle}">${graphicHTML}${graphicHTML}</div>`;
 
   this.el = rootEl;
