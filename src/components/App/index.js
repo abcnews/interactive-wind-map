@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import '../../mapbox-gl.scss';
 import Arrow from '../Arrow';
 import Legend from '../Legend';
 import styles from './styles.scss';
