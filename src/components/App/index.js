@@ -95,12 +95,9 @@ export default function App({ state }) {
         Object.assign(
           {
             container: mapboxMapId,
-            // doubleClickZoom: false,
-            // dragRotate: false,
             interactive: false,
             maxZoom: 7,
             minZoom: 3,
-            // scrollZoom: false,
             style: MAPBOX_STYLE
           },
           mapConfig
