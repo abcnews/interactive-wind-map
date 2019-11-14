@@ -19,12 +19,12 @@ const INITIALLY_SMALL_VIEWPORT = INITIAL_WINDOW_WIDTH < 960;
 const STATES = {
   nsw: {
     'map-sm': {
-      center: [150, -32.5],
-      zoom: 5
+      center: [150, -32],
+      zoom: 4.75
     },
     'map-md': {
       center: [147.6, -32.5],
-      zoom: 5.5
+      zoom: 5.25
     },
     'map-lg': {
       center: [147.6, -32.5],
@@ -37,12 +37,26 @@ const STATES = {
       zoom: 4.25
     },
     'map-md': {
-      center: [148, -22],
-      zoom: 5.25
+      center: [148, -22.25],
+      zoom: 5
     },
     'map-lg': {
       center: [150, -23],
       zoom: 5.75
+    }
+  },
+  wa: {
+    'map-sm': {
+      center: [120, -24.75],
+      zoom: 3.75
+    },
+    'map-md': {
+      center: [121, -24.25],
+      zoom: 4.25
+    },
+    'map-lg': {
+      center: [121, -24.5],
+      zoom: 4.75
     }
   }
 };

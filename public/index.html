@@ -6,6 +6,21 @@
     <title>interactive-wind-map</title>
   </head>
   <body>
+    <div id="wa" style="position: relative; height: 0px; padding-bottom: 100%;">
+      <iframe
+        width="100%"
+        frameborder="0"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen
+        allowtransparency
+        src="embed/wa"
+        style="position: absolute; height: 100%;"
+      ></iframe>
+    </div>
+    <script>
+      if (window.innerWidth <= 640) wa.style.paddingBottom = '133%';
+    </script>
     <a name="windmapqld"></a>
     <div data-interactive-wind-map-root data-state="nsw"></div>
     <script src="index.js"></script>
