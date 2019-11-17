@@ -46,6 +46,20 @@ const STATES = {
       zoom: 5.75
     }
   },
+  sa: {
+    'map-sm': {
+      center: [135, -32.5],
+      zoom: 4.25
+    },
+    'map-md': {
+      center: [135, -32.5],
+      zoom: 5
+    },
+    'map-lg': {
+      center: [135, -32.5],
+      zoom: 5.5
+    }
+  },
   wa: {
     'map-sm': {
       center: [120, -24.75],
