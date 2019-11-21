@@ -2,79 +2,19 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import '../../mapbox-gl.scss';
 import Arrow from '../Arrow';
 import Legend from '../Legend';
+import {
+  MAPBOX_ACCESS_TOKEN,
+  MAPBOX_STYLE,
+  DATA_URL_WITH_ACCESS_TOKEN,
+  INITIAL_WINDOW_WIDTH,
+  INITIALLY_SMALL_VIEWPORT,
+  STATES
+} from './constants';
 import styles from './styles.scss';
-
-const MAPBOX_ACCESS_TOKEN =
-  'pk.eyJ1IjoibmV3cy1vbjFpbmUiLCJhIjoiY2pjazE3OTl3MDUyeTJ3cGl2NWRxcDhpNyJ9.Kw4lhAbLUk9IPazutBe28w';
-const MAPBOX_STYLE = 'mapbox://styles/news-on1ine/ck2v56y390f3p1cp1jqb97b9d/draft';
-const DATA_URL_WITH_ACCESS_TOKEN =
-  'https://firebasestorage.googleapis.com/v0/b/windy-258800.appspot.com/o/latest.json?alt=media';
 
 let nextId = 0;
 
 mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
-
-const INITIAL_WINDOW_WIDTH = window.innerWidth;
-const INITIALLY_SMALL_VIEWPORT = INITIAL_WINDOW_WIDTH < 960;
-
-const STATES = {
-  nsw: {
-    'map-sm': {
-      center: [150, -32],
-      zoom: 4.75
-    },
-    'map-md': {
-      center: [147.6, -32.5],
-      zoom: 5.25
-    },
-    'map-lg': {
-      center: [147.6, -32.5],
-      zoom: 5.75
-    }
-  },
-  qld: {
-    'map-sm': {
-      center: [148, -21],
-      zoom: 4.25
-    },
-    'map-md': {
-      center: [148, -22.25],
-      zoom: 5
-    },
-    'map-lg': {
-      center: [150, -23],
-      zoom: 5.75
-    }
-  },
-  sa: {
-    'map-sm': {
-      center: [135, -32.5],
-      zoom: 4.25
-    },
-    'map-md': {
-      center: [135, -32.5],
-      zoom: 5
-    },
-    'map-lg': {
-      center: [135, -32.5],
-      zoom: 5.5
-    }
-  },
-  wa: {
-    'map-sm': {
-      center: [120, -24.75],
-      zoom: 3.75
-    },
-    'map-md': {
-      center: [121, -24.25],
-      zoom: 4.25
-    },
-    'map-lg': {
-      center: [121, -24.5],
-      zoom: 4.75
-    }
-  }
-};
 
 export default function App({ state }) {
   const stateData = STATES[state];
