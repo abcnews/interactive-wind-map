@@ -15,7 +15,7 @@
 		"test": "aunty test"
 	},
 	"devDependencies": {
-		"@abcnews/aunty": "^10.5.2"
+		"@abcnews/aunty": "^13.2.2"
 	},
 	"dependencies": {
 		"d3-scale": "^1.0.7",
